@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: IRANSans;
+    src: url(../font/IRANSans-web.woff2);
+  }
+
+  html,
+  body {
+    font-family: IRANSans;
+    font-size: 10px !important;
+    background-color: #151515;
+    color: #fff;
+  }
+}
+
+@layer components {
+  .bestof-bg{
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  /* question */
+  .activeQuestion {
+    @apply;
+  }
+
+  /* container */
+  .container {
+    @apply px-[20px] d2:px-[60px] max-w-[1440px] mx-auto;
+  }
+
+  /* footer */
+  .footerText {
+    @apply flex items-center py-[4px] px-[8px] text-[#959595] text-[1.05rem] font-[400];
+  }
+
+  /* banner */
+  .bgBanner {
+    background: -webkit-linear-gradient(245deg, #05c3ff 0, #151515 40%);
+  }
+  
+
+  /* animation */
+  .infinite-carousel {
+    animation: slide 30s linear infinite;
+    will-change: transform;
+  }
+
+  @keyframes slide {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(calc(-540px * 2));
+    }
+  }
+
+  .infinite-carousel-kid {
+    animation: slide2 30s linear infinite;
+    will-change: transform;
+  }
+
+  @keyframes slide2 {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(calc(-474px * 2));
+    }
+  }
+
+  .bg-div {
+    animation: bgDiv 5s linear infinite;
+    will-change: opacity;
+  }
+
+  @keyframes bgDiv {
+    0% {
+      opacity: 0;
+    }
+    50%{
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+
+
+
+  /* slider */
+  .slider {
+    @apply w-full overflow-hidden;
+  }
+  .slider-0 {
+    @apply w-full h-screen overflow-hidden;
+  }
+  .slides {
+    @apply relative w-full h-full flex cursor-default;
+  }
+  .slides img ,.slides span{
+    pointer-events: none;
+  }
+  .slide-0 {
+    @apply w-full h-full overflow-hidden;
+  }
+  .free-slide{
+    @apply flex flex-col relative w-full
+  }
+  .slide{
+    @apply relative
+  }
+  .pagination {
+    @apply block w-[10px] h-[10px] border-[#ffffff69] border-[2px] border-solid rounded-[50%] mr-[18px];
+  }
+
+
+  /* hover */
+  /* .menu-hover:hover svg{
+    fill: #f9ad03 !important;
+    color: #f9ad03 !important;
+  } */
+  .menu-hover:hover>a{
+    color: #f9ad03 !important;
+  } 
+  .menu-hover:hover .submenu-hover{
+    @apply block
+  }
+  .footer-hover:hover .submenu-hover{
+    @apply block
+  }
+
+
+  
+}
